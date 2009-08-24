@@ -1,6 +1,7 @@
 #ifndef ACERT_H
 #define ACERT_H
 
+#include <stdlib.h>
 #include <stdio.h>
 
 

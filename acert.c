@@ -1,8 +1,5 @@
 #include "acert.h"
 
-#include <stdlib.h>
-#include <stdio.h>
-
 
 /*
 struct acert_suite
