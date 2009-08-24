@@ -6,7 +6,13 @@
 
 
 
-#define acert(expression, text)
+#define acert(expression, fmt, ...) do { \
+		if (!(expression)) { \
+			printf(fmt, ## __VA_ARGS__, 0); \
+			printf("\n"); \
+			exit(1); \
+		} \
+	} while (0)
 
 
 /** Primary macro for declaring test cases. */
