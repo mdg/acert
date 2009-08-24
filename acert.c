@@ -41,13 +41,13 @@ int run_acert_cases()
 		test->func();
 		test = test->next;
 	}
-	return 0;
+	return ACERT_SUCCESS;
 }
 
 int run_acert_case(const char *target)
 {
 	struct acert_case *test = g_tests;
-	int result = 0;
+	int result = ACERT_SUCCESS;
 	int found = 0;
 	while (test) {
 		if (strcmp(target, test->case_name) == 0
@@ -61,7 +61,7 @@ int run_acert_case(const char *target)
 
 	if (!found) {
 		printf("No matching testcase for '%s'\n", target);
-		result = -1;
+		result = ACERT_NO_MATCH;
 	}
 
 	return result;
@@ -86,7 +86,7 @@ void print_usage(const char *bin)
 
 int acert_main(int argc, const char **argv)
 {
-	int result = 0;
+	int result = ACERT_SUCCESS;
 	if (argc == 1) {
 		result = run_acert_cases();
 	} else if (argc > 2) {

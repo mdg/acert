@@ -5,12 +5,16 @@
 #include <stdio.h>
 
 
+#define ACERT_SUCCESS  0
+#define ACERT_FAILURE  1
+#define ACERT_NO_MATCH 2
+
 
 #define acert(expression, fmt, ...) do { \
 		if (!(expression)) { \
 			printf(fmt, ## __VA_ARGS__, 0); \
 			printf("\n"); \
-			exit(1); \
+			exit(ACERT_FAILURE); \
 		} \
 	} while (0)
 
