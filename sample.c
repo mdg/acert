@@ -4,8 +4,8 @@
 ACERT_CASE(big_data_case)
 {
 	printf("exec big_data_case\n");
-	int x = 5;
-	acert(x == 5, "x is not equal 5");
+	int x = 7;
+	acert(x == 5, "x is %d, not equal to 5", x);
 	return 0;
 }
 
